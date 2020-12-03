@@ -6,15 +6,21 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
+import com.example.androidstudyapp.databinding.ActivityMainBinding
+import com.example.androidstudyapp.databinding.ActivitySecondBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(findViewById(R.id.toolbar))
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
 
-        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
+        binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
@@ -31,7 +37,26 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.miAddContact -> {
+                Toast.makeText(this, "You Clicked on Add Contact", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.miFavorites -> {
+                Toast.makeText(this, "You Clicked on Favorites", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.miSettings -> {
+                Toast.makeText(this, "You Clicked on Settings", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.miClose -> {
+                finish()
+                return true
+            }
+            R.id.miFeedback -> {
+                Toast.makeText(this, "You Clicked on Feedback", Toast.LENGTH_SHORT).show()
+                return true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

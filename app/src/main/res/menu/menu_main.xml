@@ -2,9 +2,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.androidstudyapp.MainActivity">
+
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
+        android:id="@+id/miSettings"
         android:title="@string/action_settings"
+        android:icon="@drawable/ic_settings"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/miAddContact"
+        android:title="Add Contact"
+        android:icon="@drawable/ic_sdd_contact"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/miFavorites"
+        android:title="Favorites"
+        android:icon="@drawable/ic_favorites"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/miFeedback"
+        android:title="Give Feedback"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/miClose"
+        android:title="Close App"
+        app:showAsAction="never" />
+
+
 </menu>
