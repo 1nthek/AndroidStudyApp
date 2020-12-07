@@ -8,7 +8,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import com.example.androidstudyapp.databinding.ActivityMainBinding
-import com.example.androidstudyapp.databinding.ActivitySecondBinding
 
 class MainActivity : AppCompatActivity() {
 
