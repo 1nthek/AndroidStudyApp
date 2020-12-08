@@ -42,28 +42,40 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
         }
 
         binding.btnDialog.setOnClickListener {
-            findNavController().navigate(R. id.action_FirstFragment_to_thirdFragment)
+            findNavController().navigate(R.id.action_FirstFragment_to_thirdFragment)
         }
 
         binding.btnRequestPermissions.setOnClickListener {
             requestPermissions()
         }
+        binding.btnRecyclerView.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_recyclerViewFragment)
+        }
 
     }
 
     private fun hasWriteExternalStoragePermission() = activity?.let {
-        ContextCompat.checkSelfPermission(it, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager
-                .PERMISSION_GRANTED
+        ContextCompat.checkSelfPermission(
+            it,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+        ) == PackageManager
+            .PERMISSION_GRANTED
     }
 
     private fun hasLocationForegroundPermission() = activity?.let {
-        ContextCompat.checkSelfPermission(it, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager
-                .PERMISSION_GRANTED
+        ContextCompat.checkSelfPermission(
+            it,
+            Manifest.permission.ACCESS_COARSE_LOCATION
+        ) == PackageManager
+            .PERMISSION_GRANTED
     }
 
     private fun hasLocationBackgroundPermission() = activity?.let {
-        ContextCompat.checkSelfPermission(it, Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager
-                .PERMISSION_GRANTED
+        ContextCompat.checkSelfPermission(
+            it,
+            Manifest.permission.ACCESS_BACKGROUND_LOCATION
+        ) == PackageManager
+            .PERMISSION_GRANTED
     }
 
     private fun requestPermissions() {
@@ -82,7 +94,11 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
         }
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         //권한을 수락 혹은 거절 했을때 호출
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
